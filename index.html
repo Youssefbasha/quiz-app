@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <main class="main"> 
+
+
+        <section class="section">
+            <div class="home-content show">
+                <h2>Quiz Application</h2>
+                <p>you will get some easy questions about <span>youssef</span> let's see what do you know about me ... i hope you can answer them all ... good luck bro</p>
+                <button class="start-btn">start</button>
+            </div>
+        </section>
+        
+    </main>
+
+    <div class="rules-box">
+        <header>
+            <h2>quiz rules :</h2>
+            <ion-icon name="clipboard-outline" style="font-size: 25px;"></ion-icon>
+        </header>
+        <p>1. you will not be able to exit if you pressed <span>begin</span></p>
+        <p>2. there will be 5 questions about me</p>
+        <p>3. if you couldn't answer <span>3 questions</span> or more you <span>fail</span></p>
+        <div class="btns-box">
+            <button class="back-btn">back</button>
+            <button class="continue-btn">next</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="quiz-app">
+            <header>
+                <h2>questions</h2>
+                <ion-icon name="clipboard-outline" style="font-size: 25px;"></ion-icon>
+            </header>
+            <div class="question-text"></div>
+            <div class="options-list"></div>
+            <div class="numsofque-andscore">
+                <p><span class="iamhere">0</span> / 5</p>
+            </div>
+            <div class="btns-quiz">
+                <button class="exit-quiz-btn">exit</button>
+                <button class="begin-quiz-btn">begin</button>
+                <button class="next-quiz-btn">next</button>
+            </div>
+        </div>
+        <div class="result-box-small">
+            <header>
+                <ion-icon name="happy-outline" class="happy"></ion-icon>
+            </header>
+            <footer>
+                <p><span class="scoretext">your score is <span class="points-of-user">0</span> of 5</span><span></span></p>
+                <span class="congratulation">congratulation !</span>
+            </footer>
+        </div>
+    </div>
+    
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="questions.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

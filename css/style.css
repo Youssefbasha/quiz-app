@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Poppins:wght@200;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+:root {
+    --main-color: #9008E8;
+    --black-color: #000;
+    --text-color: #fff;
+    --black-hover-color: #3E3E3E;
+}
+
+::selection {
+    color: var(--text-color);
+    background-color: var(--black-color);
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--black-color);
+}
+
+main {
+    background-image: url("https://1.bp.blogspot.com/-OETwQHvx2tw/XYsy3b1E3cI/AAAAAAAAGKo/QVlQ-wVwn5EAQRwZ3Cp_yyEsO5ZVoNznwCLcBGAsYHQ/s1600/%25D8%25AE%25D9%2584%25D9%2581%25D9%258A%25D8%25A7%25D8%25AA%2B%25D8%25B3%25D8%25B7%25D8%25AD%2B%25D8%25A7%25D9%2584%25D9%2585%25D9%2583%25D8%25AA%25D8%25A8%2B%25D8%25B1%25D9%2588%25D8%25B9%25D9%2587%2B2019%2B%252823%2529.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.4s ease;
+}
+
+main.blur {
+    filter: blur(30px);
+}
+
+
+main section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main section .home-content {
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    z-index: 3;
+    padding: 20px 30px;
+    margin-top: 100px;
+    opacity: 0;
+    transition: 0.4s;
+    transform: scale(0.5);
+}
+
+main section .home-content.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.home-content h2 {
+    font-size: 40px;
+    color: var(--text-color);
+}
+
+.home-content p {
+    text-align: center;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: var(--text-color);
+}
+
+.home-content .start-btn {
+    margin: 10px 0;
+    padding: 10px 55px;
+    background-color: transparent;
+    border: 1px solid black;
+    text-transform: capitalize;
+    font-size: 25px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.4s ease;
+    border-radius: 0px;
+}
+
+.home-content .start-btn:hover {
+    background-color: var(--black-color);
+    color: var(--text-color);
+}
+
+/* Home Page */
+
+.rules-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 20px 30px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.rules-box.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.rules-box h2 {
+    font-size: 25px;
+    color: var(--black-color);
+    text-transform: capitalize;
+}
+
+.rules-box p {
+    font-size: 20px;
+    text-transform: capitalize;
+    background-color: transparent;
+    padding: 10px 0;
+    margin: 10px 0px;
+}
+
+.rules-box p span {
+    color: var(--main-color);
+}
+
+.rules-box .btns-box {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.rules-box .btns-box button {
+    width: 120px;
+    height: 45px;
+    border: 1px solid var(--black-color);
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.rules-box header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.continue-btn{
+    background-color: var(--black-color);
+    color: var(--text-color);
+    transition: 0.2s ease;
+}
+
+.continue-btn:hover{
+    background-color: var(--black-hover-color);
+}
+
+.back-btn {
+    background-color: transparent;
+    color: var(--black-color);
+    margin-right: 10px;
+    transition: 0.4s ease;
+}
+
+.back-btn:hover {
+    color: var(--text-color);
+    background-color: var(--black-color);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    z-index: 4;
+    transition: 0.5s ease-in-out;
+}
+
+.container .quiz-app {
+    max-width: 450px;
+    padding: 10px 20px;
+    position: relative;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    box-shadow: 0px 10px 30px var(--black-color);
+    opacity: 0;
+    transition: 1s ease;
+    transition-delay: 0.4s;
+}
+
+.quiz-app.appear {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.container.drag {
+    left: 0;
+} 
+
+.quiz-app header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.numsofque-andscore p {
+    color: var(--black-color);
+}
+
+.quiz-app header p {
+    font-size: 20px;
+}
+
+.question-text {
+    font-size: 25px;
+    text-transform: capitalize;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.options-list {
+    margin-top: 20px;
+}
+
+.option.correct {
+    color: #2faf2f;
+    border-color: #2faf2f;
+}
+
+.option.incorrect {
+    color: red;
+    border-color: red;
+}
+
+.option.disabled {
+    pointer-events: none;
+}
+
+.options-list div {
+    margin: 15px 0;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 10px 0;
+    background-color: transparent;
+    color: var(--black-color);
+    border: 2px solid var(--text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+
+.numsofque-andscore {
+    width: 100%;
+}
+
+.numsofque-andscore p {
+    color: #000;
+    font-size: 30px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.btns-quiz {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.btns-quiz button {
+    width: 120px;
+    height: 45px;
+    border: 1px solid var(--black-color);
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 20px;
+    user-select: none;
+}
+
+.btns-quiz .next-quiz-btn {
+    background-color: var(--black-color);
+    color: var(--text-color);
+    transition: 0.2s ease;
+}
+
+.btns-quiz .next-quiz-btn:hover {
+    background-color: var(--black-hover-color);
+}
+
+.btns-quiz .begin-quiz-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    transition: 0.2s ease;
+}
+
+.btns-quiz .begin-quiz-btn:hover {
+    background-color: var(--black-color);
+    color: var(--text-color);
+}
+
+.btns-quiz .exit-quiz-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    transition: 0.2s ease;
+}
+
+.pointerclass {
+    pointer-events: none;
+}
+
+.btns-quiz .exit-quiz-btn:hover {
+    background-color: var(--black-color);
+    color: var(--text-color);
+}
+
+.result-box-small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 10px 30px var(--black-color);
+    z-index: -1;
+    opacity: 0;
+    transition: 1s ease;
+    transition-delay: 1s;
+    border-radius: 6px;
+}
+
+.happy {
+    font-size: 80px;
+}
+
+.result-box-small footer p {
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.result-box-small.appear {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.congratulation {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-transform: capitalize;
+}
+
+/* footer p span {
+    color: var(--main-color);
+} */
+
+@media (min-width: 350px) and (max-width: 550px) {
+    
+    .home-content h2 {
+        font-size: 30px;
+    }
+
+    .home-content p {
+        font-size: 20px;
+    }
+
+    .rules-box p {
+        font-size: 18px;
+    }
+
+    .container .quiz-app button {
+        width: 100px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .quiz-app {
+        width: 320px;
+    }
+
+    .quiz-app header {
+        font-size: 18px;
+    }
+
+    .quiz-app .question-text  {
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    .quiz-app .btns-quiz button {
+        width: 85px;
+        height: 37px;
+        margin-top: -20px;
+        letter-spacing: 1px;
+    }
+
+    .result-box-small {
+        width: 300px;
+    }
+}
